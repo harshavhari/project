@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Your Profile</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="first_name" value="{{ user.first_name }}">
+    <input type="text" name="last_name" value="{{ user.last_name }}">
+    <input type="text" name="contact_number" value="{{ user.contact_number }}">
+    <input type="file" name="profile_pic">
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}
+
+</body>
+</html>
